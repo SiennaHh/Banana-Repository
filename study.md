@@ -150,13 +150,14 @@ const listItems = numbers.map((number) =>
   2.<input type="text">, <textarea>, 和 <select> 都十分类似 - 他们都通过传入一个value属性来实现对组件的控制
   
   *** 
-  # react生命周期
+   
+   # react生命周期
   组件的生命周期可分成三个状态：
 
   * Mounting：已插入真实 DOM
   * Updating：正在被重新渲染
   * Unmounting：已移出真实 DOM
-  生命周期的方法有：
+   ## 生命周期的方法有：
 
   1.componentWillMount 在渲染前调用,在客户端也在服务端。
 
@@ -174,7 +175,7 @@ const listItems = numbers.map((number) =>
   7.componentWillUnmount在组件从 DOM 中移除的时候立刻被调用。    
   
   
-  
+
 
 
 
