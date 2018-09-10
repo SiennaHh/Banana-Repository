@@ -147,7 +147,9 @@ const listItems = numbers.map((number) =>
   注意this.state.value是在构造函数中初始化，这样文本区域就能获取到其中的文本。
   ## select
   1.在React中，并不使用之前的selected属性，而在根select标签上用value属性来表示选中项
+  
   2.<input type="text">, <textarea>, 和 <select> 都十分类似 - 他们都通过传入一个value属性来实现对组件的控制
+  
   
   *** 
    
@@ -157,8 +159,8 @@ const listItems = numbers.map((number) =>
   * Mounting：已插入真实 DOM
   * Updating：正在被重新渲染
   * Unmounting：已移出真实 DOM
+  
    ## 生命周期的方法有：
-
   1.componentWillMount 在渲染前调用,在客户端也在服务端。
 
   2.componentDidMount : 在第一次渲染后调用，只在客户端。之后组件已经生成了对应的DOM结构，可以通过this.getDOMNode()来进行访问。 如果你想和其他    JavaScript框架一起使用，可以在这个方法中调用setTimeout, setInterval或者发送AJAX请求等操作(防止异步操作阻塞UI)。
