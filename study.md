@@ -148,7 +148,7 @@ const listItems = numbers.map((number) =>
   ## select
   1.在React中，并不使用之前的selected属性，而在根select标签上用value属性来表示选中项
   
-  2.<input type="text">, <textarea>, 和 <select> 都十分类似 - 他们都通过传入一个value属性来实现对组件的控制
+  2. ` <input type="text">``<textarea>` 和 `<select>` 都十分类似 - 他们都通过传入一个value属性来实现对组件的控制
   
   
   *** 
