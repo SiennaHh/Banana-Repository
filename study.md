@@ -174,7 +174,12 @@ const listItems = numbers.map((number) =>
 
   6.componentDidUpdate 在组件完成更新后立即调用。在初始化时不会被调用。
 
-  7.componentWillUnmount在组件从 DOM 中移除的时候立刻被调用。    
+  7.componentWillUnmount在组件从 DOM 中移除的时候立刻被调用。   
+  
+  # 状态提升
+  状态分享是通过将state数据提升至离需要这些数据的组件最近的父组件来完成的。这就是所谓的状态提升。
+  
+  props是只读的， prop 从父组件传递下来，子组件是没有控制权的，这个问题通常是通过让组件“受控”来解决。当我们想要响应数据改变时，使用父组件提供的   `this.props.onTemperatureChange()` 而不是`this.setState()` 方法。
   
   
 
