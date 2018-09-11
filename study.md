@@ -181,9 +181,37 @@ const listItems = numbers.map((number) =>
   
   props是只读的， prop 从父组件传递下来，子组件是没有控制权的，这个问题通常是通过让组件“受控”来解决。当我们想要响应数据改变时，使用父组件提供的   `this.props.onTemperatureChange()` 而不是`this.setState()` 方法。
   
-  
+  # 组合 vs继承
+  ## 包含关系
+  组件使用 children 属性将子元素直接传递到输出
+  ```
+  <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+  </div>
+  ```
+  1.JSX 标签内的任何内容都将通过 children 属性传入组件
+  2.有时你可能需要在组件中有多个入口，这种情况下你可以使用自己约定的属性而不是 children
+
+ ## 特殊实例
+ 有时我们认为组件是其他组件的特殊实例，在 React 中，这也是通过组合来实现的，通过配置属性用较特殊的组件来渲染较通用的组件，组合对于定义为类的组件同样适用
+ 
+ # React理念
+ 1.把 UI 划分出组件层级
+ 2.用 React 创建一个静态版本
+ 3.定义 UI 状态的最小(但完整)表示
+`
+在 React 中有两种数据模型：props 和 state:
+每个数据只要考虑三个问题：
+1.它是通过 props 从父级传来的吗？如果是，他可能不是 state。
+
+2.它随着时间推移不变吗？如果是，它可能不是 state。
+
+3.你能够根据组件中任何其他的 state 或 props 把它计算出来吗？如果是，它不是 state。
+`
+ 4.确定你的 State 应该位于哪里
 
 
+ 
 
 
 
