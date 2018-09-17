@@ -52,4 +52,43 @@ class Demo4 extends Component {
       </div>
     );
 ```
+官方示例：
+```js
+const { Checkbox, Form } = antd;
+const CheckboxGroup = Checkbox.Group;
+const FormItem = Form.Item;
 
+const options = [
+  { label: 'All', value: 'All' },
+  { label: 'Apple', value: 'Apple' },
+  { label: 'Pear', value: 'Pear' },
+  { label: 'Orange', value: 'Orange' },
+];
+
+class Demo extends React.Component {
+  normalizeAll = (value, prevValue = []) => {
+    if (value.indexOf('All') >= 0 && prevValue.indexOf('All') < 0) {
+    	return ['All', 'Apple', 'Pear', 'Orange'];
+    }
+    if (value.indexOf('All') < 0 && prevValue.indexOf('All') >= 0) {
+    	return [];
+    }
+    return value;
+  };
+  render() {
+    return (
+      <Form>
+        <FormItem>
+          {this.props.form.getFieldDecorator('fruits', {
+            normalize: this.normalizeAll,
+          })(<CheckboxGroup options={options} />)}
+        </FormItem>
+      </Form>
+    );
+  }
+}
+
+const WrappedDemo = Form.create()(Demo);
+
+ReactDOM.render(<WrappedDemo />, mountNode);
+```
