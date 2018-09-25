@@ -1,12 +1,12 @@
 # React路由传参和接受参数的方式
 方式一：通过params
 
-1）.路由表中
+1. 路由表中
 ```js
 <Route path=' /sort/:id '   component={Sort}></Route>
 ```
 　　　　　　　　　　　
-2）.Link处        
+2. Link处        
 * HTML方式
 ```js
 <Link to={ ' /sort/ ' + ' 2 ' }  activeClassName='active'>XXXX</Link>
