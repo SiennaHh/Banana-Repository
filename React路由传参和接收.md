@@ -41,15 +41,13 @@ this.props.location.query.name
 ```js
 <Link to={{ path : ' /sort ' , state : { name : 'sunny' }}}> 
 ```
-                                　　
 * JS方式：
 ```js
 this.props.router.push({ pathname:'/sort',state:{name : 'sunny' } })
 ```
-                              　　  
 2. 接收页面
 ```js
- this.props.location.state.name
- ```
+this.props.location.state.name
+```
  
  
