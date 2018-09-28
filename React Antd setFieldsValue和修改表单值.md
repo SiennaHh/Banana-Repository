@@ -93,11 +93,5 @@ const WrappedDemo = Form.create()(Demo);
 ReactDOM.render(<WrappedDemo />, mountNode);
 ```
 
-# 2.React 路由传参
-React路由取参数，有两种：
- 1. ?a=1 ：这种属于 search 字符串，在 location.search 里取值；
- 2. /a/123 ：这种需要从 match.params里取值；
- 
-但无论哪种，路由获取到的值，是跳转后的那一刻的值，而不是实时更新的最新值。
 
 
