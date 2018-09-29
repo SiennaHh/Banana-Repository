@@ -25,3 +25,10 @@
       )}
   </FormItem>
 ```
+## 2.Warning: Each child in an array or iterator should have a unique "key" prop.
+1. 原因：数组循环时缺少unique "key" prop,意思就是要有一个不会重复的关键参数key。
+* http://pandakeeper.net:8000/?p=254 中是这么说的：<br/>
+`
+react的key关乎到react的dom-diff算法 react中对于dom的操作是根据生成的data-reactid进行绑定的，添加key可以保证dom结构的完整性，而不会根据react自己对dom标记的key进行重新分配 react每次决定重新渲染的时候，几乎完全是根据data-reactid来决定的，最重要的是这个机制
+`
+2. 解决办法：循环的时候加个key={i} 虽然对开发并没啥用，但是必须加
