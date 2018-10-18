@@ -32,3 +32,11 @@
 react的key关乎到react的dom-diff算法 react中对于dom的操作是根据生成的data-reactid进行绑定的，添加key可以保证dom结构的完整性，而不会根据react自己对dom标记的key进行重新分配 react每次决定重新渲染的时候，几乎完全是根据data-reactid来决定的，最重要的是这个机制
 `
 2. 解决办法：循环的时候加个key={i} 虽然对开发并没啥用，但是必须加
+
+## 3.Warning:Each record in table should have a unique `key` prop,or set `rowKey` to an unique primary key警告
+解决办法：react报错写了，Each record in dataSource of table should have a unique `key` prop, or set `rowKey` of Table to an unique primary key。
+*** 方法一：给数据加入key的键值对，"key": "1",
+*** 方法二：给Table设置rowKey,
+```js
+<Table className="table" rowKey={record => record.goodsSn} columns={this.columns} dataSource={this.state.goodList} />
+```
