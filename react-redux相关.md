@@ -5,3 +5,15 @@ react-redux提供了connect和Provider两个好基友，它们一个将组件与
 
 ### 2.react-redux保存登录信息
 
+### 3. 被react-redux的connect包裹的子组件取不到this.props.history这个对象？
+*** 解决方法：
+```js
+import PropTypes from 'prop-types'
+```
+
+```js
+你的组件.contextTypes = {
+  router: PropTypes.object.isRequired
+}
+```
+最后console.log(this.context)
