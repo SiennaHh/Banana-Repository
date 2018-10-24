@@ -103,4 +103,43 @@ function addTodo(text) {
 ```
 //我们直接dispatch(addTodo()),就发送了一个action。
 dispatch(addTodo())
+## 3. Model
+model 是 dva 中最重要的概念，Model 非 MVC 中的 M，而是领域模型，用于把数据相关的逻辑聚合到一起，几乎所有的数据，逻辑都在这边进行处理分发
+
+* state
+这里的 state 跟我们刚刚讲的 state 的概念是一样的，只不过她的优先级比初始化的低，但是基本上项目中的 state 都是在这里定义的。
+
+* namespace
+model 的命名空间，同时也是他在全局 state 上的属性，只能用字符串，我们发送在发送 action 到相应的 reducer 时，就会需要用到 namespace 。
+
+* Reducer
+以key/value 格式定义 reducer，用于处理同步操作，唯一可以修改 state 的地方。由 action 触发。其实一个纯函数。
+```js
+reducers: {
+    save(state, action) {
+      return { ...state, ...action.payload };
+    },
+  },
+```
+* Effect
+用于处理异步操作和业务逻辑，不直接修改 state，简单的来说，就是获取从服务端获取数据，并且发起一个 action 交给 reducer 的地方。
+
+其中它用到了redux-saga，里面有几个常用的函数。
+```js
+*add(action, { call, put }) {
+    yield call(delay, 1000);
+    yield put({ type: 'minus' });
+},
+```
+在项目中最主要的会用到的是 put 与 call。
+## 4. Router
+```js
+export default function({ history }){
+  return(
+    <Router history={history}>
+      <Route path="/" component={App} />
+    </Router>
+  );
+}
+```
 
