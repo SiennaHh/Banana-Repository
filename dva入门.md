@@ -149,5 +149,5 @@ export default function({ history }){
 
 * 当我们将action发送给reducer，那直接由 reducer 改变 state，然后通过 connect 重新渲染组件。
 
-这样我们就能走完一个流程了。
+* 这样我们就能走完一个流程了。
 
