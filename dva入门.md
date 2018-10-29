@@ -150,4 +150,16 @@ export default function({ history }){
 * 当我们将action发送给reducer，那直接由 reducer 改变 state，然后通过 connect 重新渲染组件。
 
 * 这样我们就能走完一个流程了。
+## 总结
+dva将所有与数据操作相关的逻辑集中放在一个地方处理和维护，在数据跟业务状态交互比较紧密的场景下，会使我们的代码更加清晰可控。尤其适用于数据跟业务状态关联性极强的企业级后台信息管理系统。
+
+对于一个企业级后台管理系统，由于要进行大量的数据操作，在设计model时将不同类型的业务需求数据操作分开处理，便于维护。
+
+项目的开发流程一般是从设计model state开始进行抽象数据，完成component后，将组件和model建立关联，通过dispatch一个action，在reducer中更新数据完成数据同步处理；当需要从服务器获取数据时，通过Effects数据异步处理，然后调用Reducer更新全局state。是一个单向的数据流动过程。解决了redux中代码分散和重写问题，总之，Dva：Build redux application easier and better。
+
+
+来源：https://www.jishux.com/p/4f0ad6e98bd4e5cf
+
+链接：https://www.jianshu.com/p/f7401adce447
+
 
